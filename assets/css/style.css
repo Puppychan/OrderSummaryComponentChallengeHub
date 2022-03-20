@@ -56,7 +56,7 @@ main {
     /* this position make sure not affect other elements */
     position: absolute;
     
-    background: url("assets/images/pattern-background-desktop.svg") top center / 100% 45% no-repeat;
+    background: url("/assets/images/pattern-background-desktop.svg") top center / 100% 45% no-repeat;
     /* -webkit-transform: rotateX(180deg) rotateY(180deg);
     -moz-transform: rotateX(180deg) rotateY(180deg);
     -o-transform: rotateX(180deg) rotateY(180deg);
@@ -96,7 +96,7 @@ main {
     width: 100%;
     height: var(--slider-height);
     /* border-radius: 10px; */
-    background: url(assets/images/illustration-hero.svg) center / cover no-repeat;
+    background: url(/assets/images/illustration-hero.svg) center / cover no-repeat;
 
 }
 /* end of card slider */
@@ -168,7 +168,7 @@ main {
     /* width: 25%; */
     content: " ";
 
-    background-image: url(assets/images/icon-music.svg);
+    background-image: url(/assets/images/icon-music.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
