@@ -17,6 +17,9 @@
         -o-transform: rotateX(180deg) rotateY(180deg);
         transform: rotateX(180deg) rotateY(180deg); */
     }
+    .card {
+        min-width: 30rem;
+    }
     .card__content {
         padding: 0 2em;
     }
