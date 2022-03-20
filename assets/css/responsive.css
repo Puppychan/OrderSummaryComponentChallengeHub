@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+    :root {
+        --slider-height: 45%;
+        --card-width: 82%;
+        --card-height: 80%;
+    }
+    .card__content {
+        padding: 0 2em;
+    }
+}

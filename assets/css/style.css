@@ -1,0 +1,245 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    --width-icon-plan: 13%;
+    --width-change-plan: 30%;
+
+    --card-width: 30%;
+    --card-height: 77%;
+    --card-gap: 3em;
+    
+    --slider-height: 35%;
+}
+*, *:after, *:before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+    color: var(--desaturated-blue);
+}
+
+.hover-change:hover {
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+main {
+    height: 100vh;
+    /* width: 100vw; */
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    background: var(--pale-blue);
+}
+#container::after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    /* this position make sure not affect other elements */
+    position: absolute;
+    
+    background: url("/assets/images/pattern-background-desktop.svg") top center / 100% 45% no-repeat;
+    /* -webkit-transform: rotateX(180deg) rotateY(180deg);
+    -moz-transform: rotateX(180deg) rotateY(180deg);
+    -o-transform: rotateX(180deg) rotateY(180deg);
+    transform: rotateX(180deg) rotateY(180deg); */
+}
+.card {
+    position: relative;
+
+    height: var(--card-height);
+    width: var(--card-width);
+    /* padding-bottom: 3em; */
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* align-content: stretch; */
+    
+    gap: var(--card-gap);
+    
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+/* start of card slider */
+.card__slider {
+    /* align-self: flex-start; */
+    content: " ";
+    /* make the slider at the top of the card */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    
+    width: 100%;
+    height: var(--slider-height);
+    /* border-radius: 10px; */
+    background: url(/assets/images/illustration-hero.svg) center / cover no-repeat;
+
+}
+/* end of card slider */
+
+/* start of card content */
+.card__content {
+    height: calc(100% - var(--slider-height) - var(--card-gap) * 2);
+    padding: 0 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 2.5em; */
+}
+.card__content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(1.4rem, 1.5vw, 1.7rem);
+
+}
+.card__content-text-heading {
+    font-weight: 900;
+    color: var(--dark-blue);
+}
+/* end of card content */
+
+/* start of plan  */
+.card__content-plan {
+    height: 8em;
+    padding: 3em 2em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: var(--very-pale-blue);
+
+    overflow:visible;
+
+}
+.card__content-plan-text {
+    height: 100%;
+    flex-basis: calc(100% - var(--width-change-plan) - var(--width-icon-plan));
+    /* width: 25%; */
+    padding-left: 1em;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+
+    gap: 0.5em;
+
+}
+.card__content-plan-text-type {
+    font-weight: 900;
+    color: var(--dark-blue);
+    font-size: clamp(1.7rem, 1.5vw, 1.9rem);
+}
+.card__content-plan-text-cost {
+    font-size: clamp(1.3rem, 1.5vw, 1.6rem);
+}
+.card__content-plan-music {
+    height: 200%;
+    flex-basis: var(--width-icon-plan);
+    /* width: 0.6em; */
+    /* width: 25%; */
+    content: " ";
+
+    background-image: url(/assets/images/icon-music.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__content-plan-change {
+    height: 100%;
+    flex-basis: var(--width-change-plan);
+    
+    /* center text */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--bright-blue);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 1.5vw, 1.7rem);
+}
+/* end of plan  */
+
+/* start of proceed button */
+.card__content-proceed {
+    width: 100%;
+    /* height: 3em; */
+    height: 3.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bright-blue);
+    color: var(--pale-blue);
+    font-size: clamp(1.7rem, 1.5vw, 1.8rem);
+    border-radius: 0.8rem;
+    box-shadow: 0.3em clamp(0.1em, 1.5vw, 0.7em) 2.3em 0.1em var(--bright-blue);
+}
+/* end of proceed button */
+
+/* start of cancel */
+.card__content-cancel {
+    width: 100%;
+    height: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(1.7rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+}
+.card__content-cancel:hover {
+    color: black;
+    opacity: 1;
+}
+/* end of cancel */
+
+/* start of footer */
+.container__footer {
+    position: absolute;
+    bottom: calc(((100% - var(--card-height)) / 2) - clamp(6em, 1.5vw, 7em));
+    z-index: 1;
+
+}
+.footer__text {
+    text-align: center;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+}
+.footer__text-link {
+    text-decoration: none;
+    color:var(--bright-blue);
+    font-size: clamp(1.4rem, 1.5vw, 1.7rem);
+    font-family: cursive;
+}
+/* end of footer */
